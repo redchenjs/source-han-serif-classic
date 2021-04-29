@@ -3894,22 +3894,18 @@ feature locl {
   lookup latin_special;
 
   language JAN exclude_dflt; # ADDED
-  lookup kr2jp;              # ADDED
   lookup cnhkjptw_special;   # ADDED
 
   language KOR exclude_dflt; # ADDED
   lookup kr_special;         # ADDED
 
   language ZHS exclude_dflt; # ADDED
-  lookup kr2cn;              # ADDED
   lookup cnhkjptw_special;   # ADDED
 
   language ZHT exclude_dflt; # ADDED
-  lookup kr2tw;              # ADDED
   lookup cnhkjptw_special;   # ADDED
 
   language ZHH exclude_dflt; # ADDED
-# lookup kr2hk;              # NOT YET IMPLEMENTED
   lookup cnhkjptw_special;   # ADDED
 
   # KANA SCRIPT
@@ -3921,42 +3917,34 @@ feature locl {
   lookup kr_special;         # ADDED
 
   language ZHS;              # ADDED
-  lookup kr2cn;              # ADDED
   lookup cnhkjptw_special;   # ADDED
 
   language ZHT;              # ADDED
-  lookup kr2tw;              # ADDED
   lookup cnhkjptw_special;   # ADDED
 
   language ZHH;              # ADDED
-# lookup kr2hk;              # NOT YET IMPLEMENTED
   lookup cnhkjptw_special;   # ADDED
 
   # HANG SCRIPT
   script hang;
   language JAN;              # ADDED
-  lookup kr2jp;              # ADDED
   lookup cnhkjptw_special;   # ADDED
 
   language KOR;
   lookup kr_special;
 
   language ZHS;              # ADDED
-  lookup kr2cn;              # ADDED
   lookup cnhkjptw_special;   # ADDED
 
   language ZHT;              # ADDED
-  lookup kr2tw;              # ADDED
   lookup cnhkjptw_special;   # ADDED
 
   language ZHH;              # ADDED
-# lookup kr2hk;              # NOT YET IMPLEMENTED
   lookup cnhkjptw_special;   # ADDED
 
   # HANI SCRIPT
   script hani;
   language JAN;              # ADDED
-  lookup kr2jp;              # ADDED
   lookup cnhkjptw_special;   # ADDED
 
   language KOR;              # ADDED
@@ -3969,7 +3957,6 @@ feature locl {
   lookup cnhkjptw_special;
 
   language ZHH;
-# lookup kr2hk;              # NOT YET IMPLEMENTED
   lookup cnhkjptw_special;
 } locl;
 
