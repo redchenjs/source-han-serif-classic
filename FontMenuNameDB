@@ -1,0 +1,76 @@
+[SourceHanSerifC-ExtraLight]
+	f=3,1,0x404,思源宋體 傳統
+	s=3,1,0x404,ExtraLight
+	l=3,1,0x404,思源宋體 傳統 ExtraLight
+	f=3,1,0x804,思源宋体 传统
+	s=3,1,0x804,ExtraLight
+	l=3,1,0x804,思源宋体 传统 ExtraLight
+	f=Source Han Serif C
+	s=ExtraLight
+	l=Source Han Serif C ExtraLight
+
+[SourceHanSerifC-Light]
+	f=3,1,0x404,思源宋體 傳統
+	s=3,1,0x404,Light
+	l=3,1,0x404,思源宋體 傳統 Light
+	f=3,1,0x804,思源宋体 传统
+	s=3,1,0x804,Light
+	l=3,1,0x804,思源宋体 传统 Light
+	f=Source Han Serif C
+	s=Light
+	l=Source Han Serif C Light
+
+[SourceHanSerifC-Regular]
+	f=3,1,0x404,思源宋體 傳統
+	s=3,1,0x404,Regular
+	l=3,1,0x404,思源宋體 傳統
+	f=3,1,0x804,思源宋体 传统
+	s=3,1,0x804,Regular
+	l=3,1,0x804,思源宋体 传统
+	f=Source Han Serif C
+	s=Regular
+	l=Source Han Serif C
+
+[SourceHanSerifC-Medium]
+	f=3,1,0x404,思源宋體 傳統
+	s=3,1,0x404,Medium
+	l=3,1,0x404,思源宋體 傳統 Medium
+	f=3,1,0x804,思源宋体 传统
+	s=3,1,0x804,Medium
+	l=3,1,0x804,思源宋体 传统 Medium
+	f=Source Han Serif C
+	s=Medium
+	l=Source Han Serif C Medium
+
+[SourceHanSerifC-SemiBold]
+	f=3,1,0x404,思源宋體 傳統
+	s=3,1,0x404,SemiBold
+	l=3,1,0x404,思源宋體 傳統 SemiBold
+	f=3,1,0x804,思源宋体 传统
+	s=3,1,0x804,SemiBold
+	l=3,1,0x804,思源宋体 传统 SemiBold
+	f=Source Han Serif C
+	s=SemiBold
+	l=Source Han Serif C SemiBold
+
+[SourceHanSerifC-Bold]
+	f=3,1,0x404,思源宋體 傳統
+	s=3,1,0x404,Bold
+	l=3,1,0x404,思源宋體 傳統
+	f=3,1,0x804,思源宋体 传统
+	s=3,1,0x804,Bold
+	l=3,1,0x804,思源宋体 传统
+	f=Source Han Serif C
+	s=Bold
+	l=Source Han Serif C
+
+[SourceHanSerifC-Heavy]
+	f=3,1,0x404,思源宋體 傳統
+	s=3,1,0x404,Heavy
+	l=3,1,0x404,思源宋體 傳統 Heavy
+	f=3,1,0x804,思源宋体 传统
+	s=3,1,0x804,Heavy
+	l=3,1,0x804,思源宋体 传统 Heavy
+	f=Source Han Serif C
+	s=Heavy
+	l=Source Han Serif C Heavy
