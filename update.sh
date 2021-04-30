@@ -6,8 +6,10 @@ search_and_delete() {
 
 for dir in ExtraLight Light Regular Medium SemiBold Bold Heavy; do
   mkdir -p "$dir/OTC"
-  sed "s|SerifK|SerifC|" "source-han-serif/$dir/OTC/features.OTC.K" > "$dir/OTC/features.OTC.CL"
-  sed "s|SerifK|SerifC|" "source-han-serif/$dir/OTC/cidfont.ps.OTC.K" > "$dir/OTC/cidfont.ps.OTC.CL"
+  sed "s|SerifK|SerifC|
+       s|Korean|Classic|" "source-han-serif/$dir/OTC/features.OTC.K" > "$dir/OTC/features.OTC.CL"
+  sed "s|SerifK|SerifC|
+       s|Korean|Classic|" "source-han-serif/$dir/OTC/cidfont.ps.OTC.K" > "$dir/OTC/cidfont.ps.OTC.CL"
   sed "s|SerifK|SerifC|
        s|Korean|Classic|" "source-han-serif/$dir/OTC/cidfontinfo.OTC.K" > "$dir/OTC/cidfontinfo.OTC.CL"
   sed -i "/lookup kr2.*;/d" "$dir/OTC/features.OTC.CL"
