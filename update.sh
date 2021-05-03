@@ -5,6 +5,7 @@ license=LICENSE.txt
 srcpath='source-han-serif'
 subdirs='ExtraLight Light Regular Medium SemiBold Bold Heavy'
 removed='latin_special cnhkjptw_special kr_special kr2jp kr2cn kr2tw locl'
+exclude='18990 18991 62267 62268 62272 62275 62276 62277 62278 62279'
 
 remove_unused_blocks() {
   sed -i ":begin; /$1/,/$2/ { /$2/! { \$! { N; b begin }; }; /$1.*$2/d; };" $3
@@ -51,6 +52,10 @@ for line in $(echo -e $(cat unused_blocks_sorted.txt)); do
       echo "$str" >> unused_glyphs.txt
     fi
   fi
+done
+
+for cid in $exclude; do
+  sed -i "/$cid/d" unused_glyphs.txt
 done
 
 sort unused_glyphs.txt | uniq > unused_glyphs_sorted.txt
