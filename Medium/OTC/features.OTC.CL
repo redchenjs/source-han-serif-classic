@@ -4175,31 +4175,6 @@ lookup vert_all {
   substitute \62293 by \59882;
 } vert_all;
 
-lookup vert_jp {
-  substitute \59969 by \64716;
-} vert_jp;
-
-lookup vert_cn {
-  substitute \62419 by \59903;
-  substitute \62420 by \59904;
-  substitute \62421 by \59905;
-  substitute \62422 by \59906;
-} vert_cn;
-
-lookup vert_cnkr {
-  substitute \59944 by \59881;
-  substitute \59969 by \59879;
-  substitute \59970 by \59880;
-  substitute \59974 by \59882;
-} vert_cnkr;
-
-lookup vert_hkjpkrtw {
-  substitute \62419 by \64404;
-  substitute \62420 by \64405;
-  substitute \62421 by \64406;
-  substitute \62422 by \64407;
-} vert_hkjpkrtw;
-
 lookup vert_combining {
   position \745 <500 1000 0 -1000>;
   position \1438 <500 1000 0 -1000>;
@@ -4949,42 +4924,6 @@ lookup vert_jamo {
   position \64402 <483 1000 0 -1000>;
   position \64403 <483 1000 0 -1000>;
 } vert_jamo;
-
-feature vert {
-  lookup vert_all;
-  lookup vert_cnkr;
-  lookup vert_hkjpkrtw;
-  lookup vert_combining;
-  lookup vert_jamo;
-
-  script kana;
-  language JAN exclude_dflt;
-  lookup vert_all;
-  lookup vert_jp;
-  lookup vert_hkjpkrtw;
-  lookup vert_combining;
-  lookup vert_jamo;
-
-  script hani;
-  language ZHS exclude_dflt;
-  lookup vert_all;
-  lookup vert_cn;
-  lookup vert_cnkr;
-  lookup vert_combining;
-  lookup vert_jamo;
-
-  language ZHT exclude_dflt;
-  lookup vert_all;
-  lookup vert_hkjpkrtw;
-  lookup vert_combining;
-  lookup vert_jamo;
-
-  language ZHH exclude_dflt;
-  lookup vert_all;
-  lookup vert_hkjpkrtw;
-  lookup vert_combining;
-  lookup vert_jamo;
-} vert;
 
 feature vrt2 {
   lookup vert_all;
@@ -9401,3 +9340,35 @@ feature vpal {
   position \64746 <0 100 0 -246>;
 } vpal;
 
+lookup cl_special {
+  substitute \1397 by \62286;
+  substitute \1398 by \62287;
+  substitute \18990 by \18989;
+  substitute \18991 by \18989;
+  substitute \59944 by \62288;
+  substitute \59955 by \62289;
+  substitute \59957 by \62290;
+  substitute \59969 by \62291;
+  substitute \59970 by \62292;
+} cl_special;
+
+feature locl {
+  lookup cl_special;
+} locl;
+
+lookup vert_cl {
+  substitute \1397 by \62286;
+  substitute \1398 by \62287;
+  substitute \59944 by \62288;
+  substitute \59955 by \62289;
+  substitute \59957 by \62290;
+  substitute \59969 by \62291;
+  substitute \59970 by \62292;
+} vert_cl;
+
+feature vert {
+  lookup vert_all;
+  lookup vert_cl;
+  lookup vert_combining;
+  lookup vert_jamo;
+} vert;

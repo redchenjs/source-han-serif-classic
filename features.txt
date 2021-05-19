@@ -1,0 +1,32 @@
+lookup cl_special {
+  substitute \1397 by \62286;
+  substitute \1398 by \62287;
+  substitute \18990 by \18989;
+  substitute \18991 by \18989;
+  substitute \59944 by \62288;
+  substitute \59955 by \62289;
+  substitute \59957 by \62290;
+  substitute \59969 by \62291;
+  substitute \59970 by \62292;
+} cl_special;
+
+feature locl {
+  lookup cl_special;
+} locl;
+
+lookup vert_cl {
+  substitute \1397 by \62286;
+  substitute \1398 by \62287;
+  substitute \59944 by \62288;
+  substitute \59955 by \62289;
+  substitute \59957 by \62290;
+  substitute \59969 by \62291;
+  substitute \59970 by \62292;
+} vert_cl;
+
+feature vert {
+  lookup vert_all;
+  lookup vert_cl;
+  lookup vert_combining;
+  lookup vert_jamo;
+} vert;

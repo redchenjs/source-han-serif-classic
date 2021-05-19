@@ -4,8 +4,7 @@ variant=Serif
 license=LICENSE.txt
 srcpath='source-han-serif'
 subdirs='ExtraLight Light Regular Medium SemiBold Bold Heavy'
-removed='latin_special cnhkjptw_special kr_special kr2jp kr2cn kr2tw locl'
-exclude='18990 18991 62267 62268 62272 62275 62276 62277 62278 62279'
+removed='latin_special cnhkjptw_special kr_special kr2jp kr2cn kr2tw locl vert_jp vert_cn vert_cnkr vert_hkjpkrtw vert'
 
 remove_unused_blocks() {
   sed -i ":begin; /$1/,/$2/ { /$2/! { \$! { N; b begin }; }; /$1.*$2/d; };" $3
@@ -21,6 +20,8 @@ search_unused_glyphs() {
 for dir in $subdirs; do
   mkdir -p "$dir/OTC"
 
+  echo "Removing unused blocks.... $dir"
+
   sed "s|${variant}K|${variant}C|
        s|Korean|Classic|" "$srcpath/$dir/OTC/features.OTC.K" > "$dir/OTC/features.OTC.CL"
   sed "s|${variant}K|${variant}C|
@@ -31,10 +32,14 @@ for dir in $subdirs; do
   for block in $removed; do
     remove_unused_blocks "[a-z] $block " "} $block;\n" "$dir/OTC/features.OTC.CL"
   done
+
+  cat features.txt >> "$dir/OTC/features.OTC.CL"
 done
 
 :> unused_blocks.txt
 :> unused_glyphs.txt
+
+echo "Searching unused glyphs...."
 
 for block in $removed; do
   search_unused_glyphs "[a-z] $block " "} $block;" "$srcpath/Regular/OTC/features.OTC.K"
@@ -45,17 +50,16 @@ for line in $(echo -e $(cat unused_blocks_sorted.txt)); do
   str=$(echo "$line" | grep -E '[\][0-9]+;' | sed -r 's|[\]([0-9]+);|\1|')
 
   if [ -n "$str" ]; then
-    ret0=$(cat "Regular/OTC/features.OTC.CL" | grep "[\]$str[; ]")
-    ret1=$(cat "UniSourceHan${variant}CL-UTF32-H" "SourceHan${variant}_CL_sequences.txt" | grep "$str$")
+    ret0=$(cat "features.txt" | grep "[\]$str[; ]")
+    ret1=$(cat "Regular/OTC/features.OTC.CL" | grep "[\]$str[; ]")
+    ret2=$(cat "UniSourceHan${variant}CL-UTF32-H" "SourceHan${variant}_CL_sequences.txt" | grep "$str$")
 
-    if [ -z "$ret0" -a -z "$ret1" ]; then
+    if [ -z "$ret0" -a -z "$ret1" -a -z "$ret2" ]; then
+      echo "Found unused glyphs.... \\$str"
+
       echo "$str" >> unused_glyphs.txt
     fi
   fi
-done
-
-for cid in $exclude; do
-  sed -i "/$cid/d" unused_glyphs.txt
 done
 
 sort unused_glyphs.txt | uniq > unused_glyphs_sorted.txt
@@ -64,6 +68,8 @@ for line in $(echo -e $(cat unused_glyphs_sorted.txt)); do
 done
 
 for dir in $subdirs; do
+  echo "Removing unused glyphs.... $dir"
+
   mergefonts -gx $arg "$dir/output.ps" "$dir/OTC/cidfont.ps.OTC.CL"
   mv "$dir/output.ps" "$dir/OTC/cidfont.ps.OTC.CL"
 done
